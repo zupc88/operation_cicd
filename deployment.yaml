@@ -52,11 +52,11 @@ spec:
                   key: DB_URL
           - name: DB_USER
             valueFrom:
-               configMapKeyRef:
+               secretKeyRef:
                   name: db-dev
                   key: DB_USER
           - name: DB_PASS
             valueFrom:
-               configMapKeyRef:
+               secretKeyRef:
                   name: db-dev
                   key: DB_PASS
