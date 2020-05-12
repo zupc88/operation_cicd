@@ -83,7 +83,7 @@ deploy 선택  ->
 •Manifests 에 폴더를 선택 하고 아래처럼 * (아스테리스크) 표시
 •/../manefest/*
 •Containers 는 변경할 이미지 명    
-ccteam4acr.azurecr.io/monolith:$(Build.BuildId)    
+ccteam4acr.azurecr.io/이미지명:$(Build.BuildId)    
 
 
 
