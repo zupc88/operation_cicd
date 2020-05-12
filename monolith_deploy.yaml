@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: monolith2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: monolith2
+    spec:
+      containers:
+        - name: monolith2
+          image: ccteam4acr.azurecr.io/monolith2
+          ports:
+            - containerPort: 8080
