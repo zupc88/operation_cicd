@@ -20,7 +20,7 @@ deployment.yaml 파일은 ACR 이미지 레지스트리URL이 들어가므로 �
                                                            CI
 *******************************************************************************************************
 												  
-http://devops.azure.com
+http://devops.azure.com 접속
 
 PIPELINES
 
@@ -38,6 +38,10 @@ Agent Specificatin : ubuntu-18.04
 
 Agejtn job 1에서 "+" 버튼 누르고, maven, copy files, publish  "build" artifact , docker 추가
 
+
+maven 
+설정 변경 없음
+
 copy file 설정 변경
 가. 소스폴더: $(system.defaultworkingdirectory)
 나. 컨텐츠:
@@ -47,20 +51,22 @@ azure/*
 manifests/*
 다. 타겟폴더: $(build.artifactstagingdirectory) 
 
-docker
+docker 설정 변경
 Container registry: acr
 container repository: monolith2
 
 
 SAVE
 
-RUN
+RUN (RUN해야 CD에서 manifests 연동 가능)
 
 
 *******************************************************************************************************
                                                            CD
 *******************************************************************************************************
-Releases
+ci 환경 구성
+
+Releases 선택
 
 Empty job 선택
 
