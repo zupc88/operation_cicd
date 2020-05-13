@@ -30,7 +30,7 @@ spec:
               port: 80
               scheme: HTTP
             initialDelaySeconds: 5
-            periodSeconds: 15
+            periodSeconds: 30
             timeoutSeconds: 5
           readinessProbe:
             httpGet:
@@ -38,18 +38,14 @@ spec:
               port: 80
               scheme: HTTP
             initialDelaySeconds: 5
-            timeoutSeconds: 1
+            periodSeconds: 15
+            timeoutSeconds: 5
           env:
           - name: EMBED_TOMCAT_JAVA_OPTS
             valueFrom:
                configMapKeyRef:
                   name: spring-dev
                   key: JAVA_OPTS
-          - name: DB_URL
-            valueFrom:
-               configMapKeyRef:
-                  name: spring-dev
-                  key: DB_URL
           - name: DB_USER
             valueFrom:
                secretKeyRef:
